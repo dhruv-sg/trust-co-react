@@ -1,0 +1,251 @@
+/* ============================================
+   Company Page Styles
+   ============================================ */
+
+.company-page {
+    width: 100%;
+    background-color: var(--color-white);
+}
+
+/* 1. Hero Section */
+.company-hero {
+    padding: 120px 20px 80px;
+    background-color: var(--color-bg-light);
+    text-align: center;
+}
+
+.company-hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.company-hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.company-hero p {
+    font-size: 20px;
+    color: var(--color-secondary-text);
+    line-height: 1.6;
+}
+
+/* 2. Stats Section */
+.company-stats {
+    padding: 80px 20px;
+    background-color: var(--color-white);
+}
+
+.company-stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: var(--color-secondary-text);
+}
+
+/* 3. Values Section */
+.company-values {
+    padding: 100px 20px;
+    background-color: var(--color-bg-light);
+}
+
+.company-values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+    margin-bottom: 60px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.value-card {
+    background: var(--color-white);
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.value-icon {
+    font-size: 40px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.value-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+    margin-bottom: 16px;
+}
+
+.value-card p {
+    font-size: 16px;
+    color: var(--color-secondary-text);
+    line-height: 1.6;
+}
+
+/* 4. Team Preview Section */
+.company-team-preview {
+    padding: 100px 20px;
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+.team-preview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-preview-subtitle {
+    font-size: 16px;
+    color: var(--color-secondary-text);
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin: -40px auto 48px;
+}
+
+.team-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+.team-preview-card {
+    text-align: center;
+}
+
+.team-preview-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+    border: 8px solid var(--color-bg-light);
+}
+
+.team-preview-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.team-preview-card span {
+    color: var(--color-secondary-text);
+    font-size: 14px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* 5. Careers CTA Section */
+.company-careers-cta {
+    padding: 100px 20px;
+    background-color: var(--color-bg-light);
+    text-align: center;
+}
+
+.careers-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.company-careers-cta h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+}
+
+.company-careers-cta p {
+    color: var(--color-secondary-text);
+    margin-bottom: 40px;
+}
+
+/* ============================================
+   Responsiveness
+   ============================================ */
+@media (max-width: 1024px) {
+    .company-hero h1 {
+        font-size: 44px;
+    }
+
+    .company-stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .company-hero h1 {
+        font-size: 32px;
+    }
+
+    .company-stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-preview-subtitle {
+        margin-top: -30px;
+    }
+}

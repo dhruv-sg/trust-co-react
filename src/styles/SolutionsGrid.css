@@ -1,0 +1,143 @@
+.solutions-grid-section {
+    padding: 60px 20px 100px;
+    background-color: var(--color-bg-light);
+}
+
+.solutions-grid-section .container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Filter Styling */
+.solutions-filter {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: 1px solid #E2E8F0;
+    background: #FFFFFF;
+    color: #4A5568;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-tab:hover {
+    border-color: #0A2640;
+    color: #0A2640;
+}
+
+.filter-tab.active {
+    background: #0A2640;
+    color: #FFFFFF;
+    border-color: #0A2640;
+}
+
+/* Grid Styling */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.solution-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.solution-image {
+    width: 100%;
+    aspect-ratio: 1.6 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #E2E8F0;
+}
+
+.solution-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.solution-card:hover .solution-image img {
+    transform: scale(1.05);
+}
+
+.solution-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0A2640;
+    margin: 0;
+}
+
+.solution-category {
+    font-size: 13px;
+    color: #94A3B8;
+    margin: 0;
+}
+
+/* Show More Button */
+.show-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.btn-show-more {
+    padding: 16px 40px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    color: #0A2640;
+    border: 2px solid #0A2640;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-show-more:hover {
+    background: #0A2640;
+    color: #FFFFFF;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .solutions-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .solutions-hero-heading {
+        font-size: 48px;
+    }
+
+    .solution-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .solutions-filter {
+        gap: 8px;
+    }
+
+    .filter-tab {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

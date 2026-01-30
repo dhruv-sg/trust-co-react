@@ -1,0 +1,207 @@
+.bridge-section {
+    width: 100%;
+    height: 700px;
+    background-color: var(--color-white);
+    display: flex;
+    overflow: hidden;
+}
+
+.bridge-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+/* LEFT COLUMN - Image Area */
+.bridge-image-wrapper {
+    flex: 1;
+    position: relative;
+    height: 100%;
+}
+
+.bridge-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.award-badge {
+    position: absolute;
+    bottom: 60px;
+    right: -70px;
+    width: 140px;
+    height: 140px;
+    background-color: var(--color-dark-blue);
+    border-radius: 50%;
+    border: 8px solid var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    box-shadow: 0 10px 30px rgba(10, 38, 64, 0.15);
+    z-index: 2;
+}
+
+.award-number {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.award-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    max-width: 80px;
+    line-height: 1.2;
+}
+
+.award-year {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* RIGHT COLUMN - Content Area */
+.bridge-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px 0 140px;
+    gap: 28px;
+    background-color: var(--color-white);
+}
+
+.bridge-heading {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--color-primary-text);
+    margin: 0;
+}
+
+.bridge-heading span.highlight {
+    color: #94A3B8;
+    /* Lighter gray for 'companies' and 'customers' */
+    font-weight: 700;
+}
+
+.bridge-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-secondary-text);
+    margin: 0;
+    max-width: 500px;
+}
+
+.bridge-cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bridge-cta-btn:hover {
+    background-color: #0A1E32;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(10, 38, 64, 0.2);
+}
+
+.bridge-cta-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.bridge-cta-btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .bridge-container {
+        gap: 40px;
+    }
+
+    .bridge-heading {
+        font-size: 38px;
+    }
+
+    .bridge-image {
+        height: 400px;
+    }
+
+    .award-badge {
+        width: 120px;
+        height: 120px;
+        bottom: -20px;
+        right: -20px;
+    }
+
+    .award-number {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bridge-section {
+        height: auto;
+        min-height: 700px;
+        flex-direction: column;
+    }
+
+    .bridge-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bridge-image-wrapper {
+        height: 400px;
+        width: 100%;
+    }
+
+    .bridge-content {
+        align-items: center;
+        padding: 60px 24px;
+        flex: none;
+    }
+
+    .bridge-heading {
+        font-size: 32px;
+    }
+
+    .bridge-description {
+        max-width: 100%;
+    }
+
+    .award-badge {
+        width: 100px;
+        height: 100px;
+        border-width: 6px;
+        bottom: -15px;
+        right: 10px;
+    }
+
+    .award-number {
+        font-size: 24px;
+    }
+
+    .award-label {
+        font-size: 10px;
+    }
+}

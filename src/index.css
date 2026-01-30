@@ -1,0 +1,45 @@
+:root {
+  --color-dark-blue: #0A2640;
+  /* Main dark color for headings and buttons */
+  --color-primary-text: #0A2640;
+  --color-secondary-text: #697684;
+  /* Gray for subtitles */
+  --color-bg-light: #F3F5F6;
+  /* Very light background - RGB(243, 245, 246) */
+  --color-white: #FFFFFF;
+  --color-star: #FBBF24;
+  --font-main: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-light);
+  color: var(--color-primary-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}

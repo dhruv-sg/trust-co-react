@@ -1,0 +1,245 @@
+.blog-section {
+    width: 100%;
+    height: 850px;
+    /* Slightly taller to accommodate cards and dots */
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.blog-container {
+    max-width: 1200px;
+    /* Increased from 1100px for better desktop fit */
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Header */
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+}
+
+.blog-heading {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-primary-text);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.blog-heading .highlight {
+    color: var(--color-dark-blue);
+}
+
+.blog-see-all {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-dark-blue);
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.blog-see-all:hover {
+    transform: translateX(4px);
+}
+
+/* Slider Layout */
+.blog-slider-viewport {
+    width: 100%;
+    overflow: visible;
+    /* Allow overflow so cards aren't clipped during animation */
+    position: relative;
+}
+
+.blog-slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 40px;
+}
+
+.blog-card-wrapper {
+    flex: 0 0 calc(33.333% - 26.666px);
+    /* Default 3 cards on desktop */
+    min-width: 0;
+    /* Prevents flex items from growing past their calc width */
+    box-sizing: border-box;
+}
+
+/* Card */
+.blog-card {
+    background-color: var(--color-white);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    border: 1px solid #F1F5F9;
+    /* Subtle border for better definition */
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(10, 38, 64, 0.1);
+}
+
+.blog-image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.blog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.blog-meta {
+    font-size: 14px;
+    color: var(--color-secondary-text);
+}
+
+.blog-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-primary-text);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.blog-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-secondary-text);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-read-more {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--color-dark-blue);
+    text-decoration: none;
+    padding-top: 8px;
+}
+
+/* Indicators */
+.blog-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 50px;
+}
+
+.blog-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #CBD5E1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+}
+
+.blog-indicator-dot.active {
+    background-color: var(--color-dark-blue);
+    width: 24px;
+    /* Pill shape for active dot */
+    border-radius: 5px;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1100px) {
+    .blog-card-wrapper {
+        flex: 0 0 calc(50% - 20px);
+        /* 2 cards on tablet */
+    }
+
+    .blog-heading {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-section {
+        height: auto;
+        padding: 60px 0;
+        display: block;
+    }
+
+    .blog-container {
+        padding: 0 20px;
+    }
+
+    .blog-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .blog-heading {
+        font-size: 28px;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .blog-slider-track {
+        gap: 20px;
+        /* Reduced gap on mobile */
+    }
+
+    .blog-card-wrapper {
+        flex: 0 0 100%;
+        /* 1 card at a time on mobile */
+    }
+
+    .blog-image-container {
+        height: 200px;
+    }
+
+    .blog-indicators {
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-heading {
+        font-size: 24px;
+    }
+
+    .blog-container {
+        padding: 0 15px;
+    }
+}

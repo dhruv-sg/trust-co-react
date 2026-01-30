@@ -1,0 +1,314 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    /* Fixed height as requested */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: var(--color-bg-light);
+    overflow: hidden;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.hero-title {
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    letter-spacing: -1.5px;
+}
+
+.hero-title .highlight {
+    color: #0D4C74;
+    /* Slightly different blue or just same? Image looks same or slightly brighter. I'll stick to variable if unsure, but image shows 'Trustco.' is emphasis. */
+    color: var(--color-dark-blue);
+    /* Actually looks like the whole text is black/navy. 'Trustco' might be same color. 
+     Wait, prompt says "Trustco." should be highlighted in DARK BLUE. 
+     The rest "Find High-Potential Customers with" is black?
+     Let's set main text to close to black #111 and Trustco to #0A2640?
+     Or main text #0A2640 and Trustco #0F4C75? 
+     Let's stick to uniform Dark Blue for now as it looks very clean, or making the rest slightly lighter black.
+  */
+    color: #0c3e5f;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-secondary-text);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Actions */
+.hero-actions {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: var(--color-dark-blue);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(10, 38, 64, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(10, 38, 64, 0.2);
+}
+
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark-blue);
+    padding: 12px 20px;
+    transition: opacity 0.2s;
+}
+
+.btn-secondary:hover {
+    opacity: 0.8;
+}
+
+.play-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    /* Actually looks transparent or white circle? Image shows Dark Circle with Play Triangle? */
+    /* Re-reading image: Play icon is a FILLED CIRCLE (dark blue) with WHITE triangle. */
+    /* Wait, prompt says: "Circular play icon button" */
+    /* My code above has <svg path fill="#0A2640"> which is dark triangle. */
+    /* I should fix the SVG to be white triangle, circle dark background? */
+    /* Let's look at the image: It's a dark circle with white play arrow. */
+    /* I will fix the CSS/SVG in the next step or overrides here. */
+    background-color: var(--color-dark-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-icon svg path {
+    fill: white;
+}
+
+/* Trustpilot */
+.hero-rating {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #3f4851;
+    font-weight: 500;
+}
+
+.trustpilot-logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    color: #000;
+}
+
+.tp-star {
+    color: #00b67a;
+    /* Trustpilot Green */
+    font-size: 20px;
+    line-height: 1;
+}
+
+.stars {
+    color: var(--color-star);
+    letter-spacing: 2px;
+}
+
+.rating-count {
+    color: var(--color-secondary-text);
+    font-size: 14px;
+}
+
+/* Bubbles */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    animation: float 6s ease-in-out infinite;
+    background: white;
+    z-index: 5;
+}
+
+.bubble img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Specific Sizes */
+.bubble-icon-insta svg,
+.bubble-icon-fb svg,
+.bubble-icon-yt svg,
+.bubble-icon-line svg {
+    display: block;
+}
+
+/* Adjust sizes matches visual hierarchy */
+.bubble-user-1 {
+    width: 60px;
+    height: 80px;
+    border-radius: 50px;
+    animation-delay: 0s;
+}
+
+.bubble-user-2 {
+    width: 80px;
+    height: 100px;
+    border-radius: 50px;
+    animation-delay: 1s;
+}
+
+/* Bigger one bottom left */
+.bubble-user-3 {
+    width: 50px;
+    height: 70px;
+    border-radius: 50px;
+    animation-delay: 2s;
+}
+
+.bubble-user-4 {
+    width: 90px;
+    height: 120px;
+    border-radius: 60px;
+    animation-delay: 3s;
+}
+
+/* Big one bottom right */
+
+.bubble-icon-insta {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+    animation-delay: 1.5s;
+}
+
+.bubble-icon-line {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+    animation-delay: 0.5s;
+}
+
+.bubble-icon-fb {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+    animation-delay: 2.5s;
+}
+
+.bubble-icon-yt {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .bubble-user-1 {
+        left: 2%;
+    }
+
+    .bubble-user-3 {
+        right: 2%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Hide bubbles on mobile as per requirement */
+    .bubble {
+        display: none;
+    }
+}

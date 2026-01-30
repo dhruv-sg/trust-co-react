@@ -1,0 +1,253 @@
+/* ============================================
+   VideoSection Component Styles
+   ============================================ */
+
+/* Main section container */
+.video-section {
+    width: 100%;
+    background-color: #0A3D4F;
+    /* Deep dark blue/teal navy tone */
+    padding: 80px 20px 0;
+    /* Top and side padding, no bottom padding so video card connects to bottom */
+}
+
+/* Inner container for content alignment */
+.video-section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   Top Content Row (Two-Column Layout)
+   ============================================ */
+
+.video-section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+/* Left Column - Heading */
+.video-section-heading {
+    flex: 0 0 45%;
+}
+
+.video-section-heading h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.video-section-heading .highlight {
+    color: #FFD700;
+    /* Yellow/gold highlight */
+}
+
+/* Right Column - Description */
+.video-section-description {
+    flex: 0 0 45%;
+    display: flex;
+    align-items: center;
+}
+
+.video-section-description p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #E5E7EB;
+    /* Light gray/white */
+    margin: 0;
+}
+
+/* ============================================
+   Video Card Container
+   ============================================ */
+
+.video-card {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 24px 24px 0 0;
+    /* Rounded top corners only, bottom connects to section edge */
+    overflow: hidden;
+    background-color: #F5F1E8;
+    /* Light beige/cream background */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    /* Maintain aspect ratio */
+}
+
+.video-embed-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+}
+
+.video-embed-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================================
+   Play Button Overlay (Pure CSS)
+   ============================================ */
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-button::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 20px solid #0A3D4F;
+    /* Triangle color */
+    margin-left: 4px;
+    /* Optical centering */
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.play-button:active {
+    transform: translate(-50%, -50%) scale(0.98);
+}
+
+.play-button:focus {
+    outline: none;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .video-section {
+        padding: 60px 20px 0;
+    }
+
+    .video-section-content {
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+
+    .video-section-heading h2 {
+        font-size: 40px;
+    }
+
+    .video-section-description p {
+        font-size: 15px;
+    }
+
+    .play-button {
+        width: 70px;
+        height: 70px;
+    }
+
+    .play-button::before {
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 18px solid #0A3D4F;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .video-section {
+        padding: 50px 20px 0;
+    }
+
+    .video-section-content {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .video-section-heading,
+    .video-section-description {
+        flex: 1 1 100%;
+    }
+
+    .video-section-heading h2 {
+        font-size: 32px;
+    }
+
+    .video-section-description p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .video-card {
+        border-radius: 16px;
+    }
+
+    .play-button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .play-button::before {
+        border-top: 9px solid transparent;
+        border-bottom: 9px solid transparent;
+        border-left: 16px solid #0A3D4F;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .video-section {
+        padding: 40px 16px 0;
+    }
+
+    .video-section-heading h2 {
+        font-size: 28px;
+    }
+
+    .video-section-description p {
+        font-size: 13px;
+    }
+
+    .play-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .play-button::before {
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 14px solid #0A3D4F;
+    }
+}

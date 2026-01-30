@@ -1,0 +1,115 @@
+/* ============================================
+   TrustedBrands Component Styles
+   ============================================ */
+
+/* Main section container */
+.trusted-brands {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    /* Compact vertical padding */
+}
+
+/* Inner container for content alignment */
+.trusted-brands-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* ============================================
+   Text Section (Left Side)
+   ============================================ */
+
+.trusted-brands-text {
+    flex-shrink: 0;
+}
+
+.trusted-brands-text p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0A2640;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* ============================================
+   Logos Section (Right Side)
+   ============================================ */
+
+.trusted-brands-logos {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+}
+
+/* Individual brand logo container */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    /* Further increased for maximum visibility */
+}
+
+.brand-logo img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    filter: grayscale(100%);
+    transition: opacity 0.2s ease;
+}
+
+/* Subtle hover effect (optional, minimal) */
+.brand-logo img:hover {
+    opacity: 0.8;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .trusted-brands-container {
+        gap: 20px;
+    }
+
+    .trusted-brands-logos {
+        gap: 30px;
+    }
+
+    .brand-logo {
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .trusted-brands {
+        padding: 35px 20px;
+    }
+
+    .trusted-brands-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .trusted-brands-logos {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px 30px;
+        width: 100%;
+    }
+
+    .brand-logo {
+        height: 40px;
+    }
+}

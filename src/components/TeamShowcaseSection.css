@@ -1,0 +1,313 @@
+/* ===============================
+   BASE SECTION
+================================ */
+
+.team-showcase-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Background split */
+.team-showcase-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.bg-top {
+    height: 54%;
+    background-color: #0a2640;
+}
+
+.bg-bottom {
+    height: 45%;
+    background-color: #f2f5f6;
+}
+
+/* Container */
+.team-showcase-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 100px;
+}
+
+/* ===============================
+   TOP CONTENT
+================================ */
+
+.team-top-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    margin-bottom: 100px;
+}
+
+.team-top-heading {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.team-top-heading .highlight {
+    color: #fbbf24;
+    display: block;
+}
+
+.team-top-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* ===============================
+   IMAGE COLLAGE (Split Image Effect)
+================================ */
+
+.team-collage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    column-gap: 12px;
+    row-gap: 0px;
+    margin-bottom: 120px;
+    position: relative;
+    width: 100%;
+}
+
+.collage-col {
+    display: contents;
+}
+
+/* Card base - FIXED BACKGROUND SIZE to prevent stretching */
+.collage-img-card {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-size: 1160px auto;
+    /* Matches container width minus padding roughly */
+    background-repeat: no-repeat;
+    background-color: #E2E8F0;
+    transition: transform 0.3s ease;
+}
+
+/* Positioning logic based on 4-column grid (approx 281px per col + 12px gap) */
+.col-0 .collage-img-card {
+    background-position-x: 0px;
+}
+
+.col-1 .collage-img-card {
+    background-position-x: -293px;
+}
+
+.col-2 .collage-img-card {
+    background-position-x: -586px;
+}
+
+.col-3 .collage-img-card {
+    background-position-x: -879px;
+}
+
+/* Top cards: Aligned at the BOTTOM (the split line) */
+.top-card {
+    grid-row: 1;
+    align-self: end;
+    border-radius: 20px 20px 0 0;
+    background-image: url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop");
+    background-position-y: bottom;
+    /* Anchor to the split line */
+}
+
+/* Bottom cards: Aligned at the TOP (the split line) */
+.bottom-card {
+    grid-row: 2;
+    align-self: start;
+    border-radius: 0 0 20px 20px;
+    background-image: url("https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop");
+    background-position-y: top;
+    /* Anchor to the split line */
+}
+
+/* Column assignment */
+.col-0 {
+    grid-column: 1;
+}
+
+.col-1 {
+    grid-column: 2;
+}
+
+.col-2 {
+    grid-column: 3;
+}
+
+.col-3 {
+    grid-column: 4;
+}
+
+/* Heights to match the design image exactly - Dynamic Staggering */
+.col-0 .top-card {
+    height: 360px;
+}
+
+.col-0 .bottom-card {
+    height: 420px;
+}
+
+.col-1 .top-card {
+    height: 280px;
+}
+
+.col-1 .bottom-card {
+    height: 360px;
+}
+
+.col-2 .top-card {
+    height: 500px;
+}
+
+.col-2 .bottom-card {
+    height: 460px;
+}
+
+.col-3 .top-card {
+    height: 320px;
+}
+
+.col-3 .bottom-card {
+    height: 280px;
+}
+
+
+/* Hover effect */
+.collage-img-card:hover .card-image {
+    transform: scale(1.06);
+}
+
+/* ===============================
+   BOTTOM CONTENT
+================================ */
+
+.team-bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.team-bottom-quote {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #64748b;
+}
+
+.team-bottom-heading {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0a2640;
+    line-height: 1.3;
+}
+
+.team-bottom-heading .light-text {
+    color: #94a3b8;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+    .team-showcase-container {
+        padding: 80px 20px;
+    }
+
+    .team-top-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .team-top-heading {
+        font-size: 44px;
+    }
+
+    .team-top-description {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .collage-img-card {
+        background-size: cover;
+        /* Back to cover on mobile for simple display */
+        background-position: center !important;
+        border-radius: 16px !important;
+        height: 200px !important;
+        margin-bottom: 20px;
+    }
+
+    .team-collage-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+
+    .collage-col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-card,
+    .bottom-card {
+        height: 200px !important;
+        align-self: stretch;
+        border-radius: 16px !important;
+    }
+
+    .team-bottom-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .team-bottom-heading {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-showcase-container {
+        padding: 80px 20px;
+    }
+
+    .team-top-row {
+        margin-bottom: 40px;
+    }
+
+    .team-top-heading {
+        font-size: 36px;
+    }
+
+    .team-collage-grid {
+        margin-bottom: 60px;
+    }
+
+    .collage-col {
+        width: 100%;
+    }
+
+    .team-bottom-heading {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-collage-grid {
+        grid-template-columns: 1fr;
+    }
+}

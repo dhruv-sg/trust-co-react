@@ -1,0 +1,126 @@
+.careers-section {
+    background-color: #F8FAFC;
+    padding: 100px 20px;
+    width: 100%;
+}
+
+.careers-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.careers-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.careers-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0A2640;
+    margin-bottom: 24px;
+}
+
+.careers-subtitle {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Job Table Header */
+.careers-table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 0 40px 20px;
+    color: #0A2640;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* Job Rows */
+.careers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 60px;
+}
+
+.job-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    background-color: #FFFFFF;
+    padding: 24px 40px;
+    border-radius: 16px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.job-row:hover {
+    border-color: #0A2640;
+    background-color: #F1F5F9;
+    transform: translateY(-2px);
+}
+
+.job-position {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0A2640;
+}
+
+.job-department,
+.job-location {
+    font-size: 16px;
+    color: #64748B;
+}
+
+/* Bottom CTA */
+.careers-cta-container {
+    text-align: center;
+}
+
+.careers-cta-btn {
+    background-color: #0A2640;
+    color: #FFFFFF;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.careers-cta-btn:hover {
+    background-color: #0d375a;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .careers-table-header {
+        display: none;
+    }
+
+    .job-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 24px;
+        gap: 12px;
+    }
+
+    .careers-title {
+        font-size: 32px;
+    }
+
+    .careers-cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
